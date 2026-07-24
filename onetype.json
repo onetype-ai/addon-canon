@@ -1,0 +1,10 @@
+{
+    "type": "addon",
+    "slug": "onetype/addon/canon",
+    "name": "Canon",
+    "description": "Static analysis and convention enforcement for OneType code, checking naming, structure, patterns, formatting, and reachability across addons.",
+    "icon": "gavel",
+    "color": "rgba(129, 140, 248, 1)",
+    "status": "enabled",
+    "depends": []
+}

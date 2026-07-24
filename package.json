@@ -1,0 +1,13 @@
+{
+    "name": "@onetype/addon-canon",
+    "version": "0.1.0",
+    "type": "module",
+    "main": "./back/load.js",
+    "imports": {
+        "#canon/*": "./*"
+    },
+    "exports": {
+        ".": "./back/load.js",
+        "./*": "./*"
+    }
+}

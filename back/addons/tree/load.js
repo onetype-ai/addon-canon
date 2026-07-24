@@ -1,0 +1,36 @@
+// This file is part of OneType. Created and led by Dejan Tomic <hi@iamdejan.com>, co-authored by Stefan Pakic, onetype.ai
+
+import '#canon/back/addons/tree/addon.js';
+import '#canon/back/addons/tree/functions/get.folded.js';
+import '#canon/back/addons/tree/functions/get.pattern.js';
+import '#canon/back/addons/tree/functions/is.allowed.js';
+import '#canon/back/addons/tree/functions/assert.violations.js';
+import '#canon/back/addons/tree/functions/assert.pairs.js';
+import '#canon/back/addons/tree/functions/assert.folders.js';
+import '#canon/back/addons/tree/items/canon/tree/addon.back.js';
+import '#canon/back/addons/tree/items/canon/tree/addon.front.js';
+import '#canon/back/addons/tree/items/canon/tree/exposed.back.js';
+import '#canon/back/addons/tree/items/canon/tree/exposed.front.js';
+import '#canon/back/addons/tree/items/canon/tree/functions.back.js';
+import '#canon/back/addons/tree/items/canon/tree/functions.front.js';
+import '#canon/back/addons/tree/items/canon/tree/gitignore.js';
+import '#canon/back/addons/tree/items/canon/tree/item.catch.back.js';
+import '#canon/back/addons/tree/items/canon/tree/item.catch.front.js';
+import '#canon/back/addons/tree/items/canon/tree/item.functions.back.js';
+import '#canon/back/addons/tree/items/canon/tree/item.functions.front.js';
+import '#canon/back/addons/tree/items/canon/tree/items.back.js';
+import '#canon/back/addons/tree/items/canon/tree/items.front.js';
+import '#canon/back/addons/tree/items/canon/tree/license.js';
+import '#canon/back/addons/tree/items/canon/tree/listeners.emitters.back.js';
+import '#canon/back/addons/tree/items/canon/tree/listeners.emitters.front.js';
+import '#canon/back/addons/tree/items/canon/tree/listeners.middlewares.back.js';
+import '#canon/back/addons/tree/items/canon/tree/listeners.middlewares.front.js';
+import '#canon/back/addons/tree/items/canon/tree/load.back.js';
+import '#canon/back/addons/tree/items/canon/tree/load.front.js';
+import '#canon/back/addons/tree/items/canon/tree/lock.js';
+import '#canon/back/addons/tree/items/canon/tree/onetype.js';
+import '#canon/back/addons/tree/items/canon/tree/package.js';
+import '#canon/back/addons/tree/items/canon/tree/readme.js';
+import '#canon/back/addons/tree/items/canon/tree/styles.js';
+import '#canon/back/addons/tree/items/canon/tree/todo.js';
+import '#canon/back/addons/tree/items/canon/tree/trademark.js';
