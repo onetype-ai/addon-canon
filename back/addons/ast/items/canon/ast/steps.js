@@ -4,7 +4,7 @@ onetype.AddonReady('canon.ast', (ast) =>
 {
     ast.Item({
         id: 'steps',
-        description: 'Every named step stands at the top of its function, the work that calls them follows, so a reader meets the parts before the story.',
+        description: 'Every named step stands above the work that calls it. State the steps share may sit with them, a call, a branch or a loop may not.',
         check: function(tree, walk, report)
         {
             this.kinds = () =>
@@ -34,6 +34,7 @@ onetype.AddonReady('canon.ast', (ast) =>
             {
                 return statement.type === 'ExpressionStatement'
                     && statement.expression.type === 'AssignmentExpression'
+                    && statement.expression.left.type === 'MemberExpression'
                     && statement.expression.left.object.type === 'ThisExpression';
             };
 
@@ -51,6 +52,17 @@ onetype.AddonReady('canon.ast', (ast) =>
                 });
             };
 
+            this.data = (statement) =>
+            {
+                if(statement.type === 'VariableDeclaration')
+                {
+                    return true;
+                }
+
+                return this.carried(statement)
+                    || statement.type === 'ReturnStatement';
+            };
+
             this.late = (body) =>
             {
                 let work = null;
@@ -62,7 +74,7 @@ onetype.AddonReady('canon.ast', (ast) =>
                         return { statement, work };
                     }
 
-                    if(!this.step(statement))
+                    if(!this.step(statement) && !this.data(statement))
                     {
                         work = work ? work : statement;
                     }
@@ -78,7 +90,8 @@ onetype.AddonReady('canon.ast', (ast) =>
                     report(
                         found.statement.loc.start.line,
                         'This step is named after the work on line ' + found.work.loc.start.line + ' already began. '
-                            + 'Every step moves above it, the function names all its parts first and only then tells the story.'
+                            + 'Every step moves above that line, so the function names all its parts before it tells the story. '
+                            + 'State the steps share may stay up there with them, only a call, a branch or a loop has to wait.'
                     );
                 }
             };
