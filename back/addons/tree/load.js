@@ -5,6 +5,7 @@ import '#canon/back/addons/tree/functions/get.folded.js';
 import '#canon/back/addons/tree/functions/get.pattern.js';
 import '#canon/back/addons/tree/functions/is.allowed.js';
 import '#canon/back/addons/tree/functions/assert.violations.js';
+import '#canon/back/addons/tree/functions/exposed/violations.js';
 import '#canon/back/addons/tree/functions/assert.pairs.js';
 import '#canon/back/addons/tree/functions/assert.folders.js';
 import '#canon/back/addons/tree/items/canon/tree/addon.back.js';

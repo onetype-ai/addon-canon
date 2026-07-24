@@ -11,7 +11,7 @@ Canon is the law of the OneType codebase, written as code. It reads a file and a
 ```js
 import canon from '@onetype/addon-canon';
 
-const violations = canon.Fn('assert.violations', '/path/to/back/functions/get.user.js');
+const violations = canon.violations('/path/to/back/functions/get.user.js');
 ```
 
 Every violation is a plain object, ready to print or to feed a build:
@@ -42,8 +42,10 @@ canon.Item({
 
 Registering the package walks it and registers every sub addon under `addons/` as its own entry, so `box.files` and `box.images` become `box.files` and `box.images` without a second call. From there:
 
-- `canon.tree.Fn('assert.violations', root)` walks the folder and reports every file that lives somewhere the tree does not allow, plus the pairs a file demands.
-- `canon.reach.Fn('assert.violations', root)` follows `back/load.js` through every import and reports files nothing reaches (`dead`) and imports that resolve to nothing (`stale`).
+- `canon.tree.violations(root)` walks the folder and reports every file that lives somewhere the tree does not allow, plus the pairs a file demands.
+- `canon.reach.violations(root)` follows `back/load.js` through every import and reports files nothing reaches (`dead`) and imports that resolve to nothing (`stale`).
+
+Those three are the whole public surface: `canon.violations` for one file, `canon.tree.violations` and `canon.reach.violations` for a package. The layers underneath answer through `Fn('assert.violations', …)`, which the root calls for you.
 
 ## The six layers
 

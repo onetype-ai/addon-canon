@@ -7,5 +7,6 @@ import '#canon/back/addons/reach/functions/get.alias.js';
 import '#canon/back/addons/reach/functions/find.files.js';
 import '#canon/back/addons/reach/functions/get.base.js';
 import '#canon/back/addons/reach/functions/assert.violations.js';
+import '#canon/back/addons/reach/functions/exposed/violations.js';
 import '#canon/back/addons/reach/items/canon/reach/dead.js';
 import '#canon/back/addons/reach/items/canon/reach/stale.js';

@@ -16,5 +16,6 @@ import '#canon/back/items/canon/canon.js';
 import '#canon/back/items/commands/rules.js';
 
 import '#canon/back/functions/assert.violations.js';
+import '#canon/back/functions/exposed/violations.js';
 
 export default canon;
