@@ -4,9 +4,20 @@ onetype.AddonReady('canon.structure', (structure) =>
 {
     structure.Item({
         id: 'placement',
-        description: 'Every registration lives in one of the folders its placement item names, wherever in the file it sits.',
+        description: 'Every registration lives in one of the folders its placement item names, unless a pattern claims the file it sits in.',
         check: function(file, tree, walk, report)
         {
+            this.claimed = () =>
+            {
+                return Object.values(onetype.AddonGet('canon.patterns').Items())
+                    .some((entry) =>
+                    {
+                        const claims = entry.Get('claims');
+
+                        return claims ? file.includes(claims) : false;
+                    });
+            };
+
             this.registers = (node) =>
             {
                 return node.type === 'CallExpression'
@@ -46,6 +57,11 @@ onetype.AddonReady('canon.structure', (structure) =>
 
                 return entry.Get('method') + ' lives in ' + named + ', this file sits elsewhere.';
             };
+
+            if(this.claimed())
+            {
+                return;
+            }
 
             walk((node) =>
             {

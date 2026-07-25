@@ -62,6 +62,8 @@ Canon is one addon with six sub addons, each answering a different question abou
 
 `canon.placements` is the table the structure layer reads: it maps a registration method to the folder that method belongs in, or to the few folders when a method is right in more than one place. `ItemOn` is the case for that: a hook into your own addon lives in `item/catch/`, a hook into someone else's lives in `listeners/items/<addon>/`, where the folder names the addon and the file names the moment. The check reads the whole file, not only its top level, so a registration hidden inside a callback is found the same as one standing alone.
 
+A pattern may take a folder off both these hands. Writing `claims: '/items/tests/'` on a pattern tells the generic laws to step aside on every file under it, so the addon that owns the folder answers for its shape alone. That is what lets a test register whatever it needs to make its point without the shape or the placement law reading it as a stray declaration.
+
 ## The rules
 
 Fifteen text rules read the raw lines: `empty`, `banner`, `allman`, `objects`, `spacing`, `json`, `endings`, `invisible`, `dashes`, `indent`, `branches`, `statements`, `width` (160 characters), `height` (160 lines), `breathing`.
