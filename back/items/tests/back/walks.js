@@ -3,7 +3,7 @@
 onetype.AddonReady('tests.back', (tests) =>
 {
     tests.Item({
-        id: 'back/walks',
+        id: 'canon:back/walks',
         addon: 'canon',
         description: 'Walking a package reports the files living where nothing may, the folders holding nothing and the files nothing reaches.',
         callback: function({ assert })

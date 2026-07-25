@@ -3,7 +3,7 @@
 onetype.AddonReady('tests.back', (tests) =>
 {
     tests.Item({
-        id: 'back/answers',
+        id: 'canon:back/answers',
         addon: 'canon',
         description: 'Reading one file answers every violation on it, each naming the rule, the file, the line and the fix.',
         callback: function({ assert })

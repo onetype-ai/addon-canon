@@ -3,7 +3,7 @@
 onetype.AddonReady('tests.back', (tests) =>
 {
     tests.Item({
-        id: 'back/lists',
+        id: 'canon:back/lists',
         addon: 'canon',
         description: 'Every rule is an item carrying an id and a sentence, so the law is a registry to list and not a config to trust.',
         callback: function({ assert })

@@ -3,7 +3,7 @@
 onetype.AddonReady('tests.back', (tests) =>
 {
     tests.Item({
-        id: 'back/obeys',
+        id: 'canon:back/obeys',
         addon: 'canon',
         description: 'Canon holds itself to every rule it enforces, so a law its own author could not live under never gets written.',
         callback: function({ assert })

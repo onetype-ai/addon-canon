@@ -3,7 +3,7 @@
 onetype.AddonReady('tests.back', (tests) =>
 {
     tests.Item({
-        id: 'back/registers',
+        id: 'canon:back/registers',
         addon: 'canon',
         description: 'Registering a package walks it and enters every sub addon under it as its own entry, so one call covers the whole tree beneath.',
         callback: function({ assert })

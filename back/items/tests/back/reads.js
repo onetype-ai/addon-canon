@@ -3,7 +3,7 @@
 onetype.AddonReady('tests.back', (tests) =>
 {
     tests.Item({
-        id: 'back/reads',
+        id: 'canon:back/reads',
         addon: 'canon',
         description: 'The linter reads the raw lines and the tree layer reads the parsed syntax, each catching what only it can see.',
         callback: function({ assert })
