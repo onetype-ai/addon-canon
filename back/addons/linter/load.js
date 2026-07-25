@@ -10,6 +10,7 @@ import '#canon/back/addons/linter/items/canon/linter/spacing.js';
 import '#canon/back/addons/linter/items/canon/linter/json.js';
 import '#canon/back/addons/linter/items/canon/linter/endings.js';
 import '#canon/back/addons/linter/items/canon/linter/invisible.js';
+import '#canon/back/addons/linter/items/canon/linter/dashes.js';
 import '#canon/back/addons/linter/items/canon/linter/indent.js';
 import '#canon/back/addons/linter/items/canon/linter/branches.js';
 import '#canon/back/addons/linter/items/canon/linter/statements.js';
