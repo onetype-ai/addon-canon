@@ -4,6 +4,8 @@ onetype.AddonReady('canon', (canon) =>
 {
     canon.reach = onetype.Addon('canon.reach', (addon) =>
     {
+        addon.Description('Follows the import graph of a package and answers what nothing reaches and what reaches nothing.');
+
         addon.Field('id', {
             type: 'string',
             required: true,

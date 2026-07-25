@@ -9,6 +9,7 @@ import '#canon/back/addons/structure/items/canon/structure/placement.js';
 import '#canon/back/addons/structure/items/canon/structure/register.js';
 import '#canon/back/addons/structure/items/canon/structure/functions.name.js';
 import '#canon/back/addons/structure/items/canon/structure/functions.flat.js';
+import '#canon/back/addons/structure/items/canon/structure/describes.js';
 import '#canon/back/addons/structure/items/canon/structure/items.js';
 import '#canon/back/addons/structure/items/canon/structure/naming.js';
 import '#canon/back/addons/structure/items/canon/structure/functions.verb.js';

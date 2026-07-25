@@ -2,6 +2,8 @@
 
 const canon = onetype.Addon('canon', (addon) =>
 {
+    addon.Description('Reads a file and answers whether it obeys the conventions the framework is built on.');
+
     addon.Field('id', {
         type: 'string',
         required: true,

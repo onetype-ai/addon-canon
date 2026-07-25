@@ -62,6 +62,8 @@ Canon is one addon with six sub addons, each answering a different question abou
 
 `canon.placements` is the table the structure layer reads: it maps a registration method to the folder that method belongs in, or to the few folders when a method is right in more than one place. `ItemOn` is the case for that: a hook into your own addon lives in `item/catch/`, a hook into someone else's lives in `listeners/items/<addon>/`, where the folder names the addon and the file names the moment. The check reads the whole file, not only its top level, so a registration hidden inside a callback is found the same as one standing alone.
 
+`describes` is the structure rule that asks the simplest question of all: an addon declaring itself says in one sentence what it is for, through `addon.Description('...')` inside its declaration. A registration that explains nothing is answered for wherever it stands, root addon or sub addon.
+
 A pattern may take a folder off both these hands. Writing `claims: '/items/tests/'` on a pattern tells the generic laws to step aside on every file under it, so the addon that owns the folder answers for its shape alone. That is what lets a test register whatever it needs to make its point without the shape or the placement law reading it as a stray declaration.
 
 ## The rules
@@ -70,7 +72,7 @@ Fifteen text rules read the raw lines: `empty`, `banner`, `allman`, `objects`, `
 
 Twenty-one tree rules read the parsed code: `arrows`, `comments`, `defines`, `declarations`, `globals`, `quotes`, `depth` (two levels), `exports`, `names` (three letters), `errors`, `catches`, `execution`, `modules`, `equality`, `ternary`, `params` (four), `methods` (fifteen own lines), `steps`, `fallbacks`, `aliases`, `arguments`.
 
-Eight path rules read the file against its place: `placement`, `register`, `functions.name`, `functions.flat`, `items`, `naming`, `functions.verb`, `functions.home`.
+Nine path rules read the file against its place: `placement`, `register`, `describes`, `functions.name`, `functions.flat`, `items`, `naming`, `functions.verb`, `functions.home`.
 
 Thirteen patterns hold a file to its template, twenty-nine tree items name every path a package may hold, and two reach rules close the graph.
 
@@ -111,7 +113,7 @@ It returns every rule, pattern, placement and tree path grouped by the layer tha
 
 ## Canon runs on canon
 
-Canon holds itself to every rule it enforces, and it passes: 151 files, zero violations. A rule that its own author cannot live under is a rule that gets switched off, so the check is part of the design, not a claim.
+Canon holds itself to every rule it enforces, and it passes: 152 files, zero violations. A rule that its own author cannot live under is a rule that gets switched off, so the check is part of the design, not a claim.
 
 That claim is a test, not a sentence. `back/items/tests/back/obeys.js` reads every file canon carries and asks canon about it, so the day a rule outgrows its own codebase the run says so.
 

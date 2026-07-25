@@ -4,6 +4,8 @@ onetype.AddonReady('canon', (canon) =>
 {
     canon.placements = onetype.Addon('canon.placements', (addon) =>
     {
+        addon.Description('Names the folder each registration method belongs in, the table the structure layer reads.');
+
         addon.Field('id', {
             type: 'string',
             required: true,

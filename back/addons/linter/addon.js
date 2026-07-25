@@ -4,6 +4,8 @@ onetype.AddonReady('canon', (canon) =>
 {
     canon.linter = onetype.Addon('canon.linter', (addon) =>
     {
+        addon.Description('Reads the raw lines of a file and answers where the formatting departs from the way the canon writes.');
+
         addon.Field('id', {
             type: 'string',
             required: true,

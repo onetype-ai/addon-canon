@@ -4,6 +4,8 @@ onetype.AddonReady('canon', (canon) =>
 {
     canon.tree = onetype.Addon('canon.tree', (addon) =>
     {
+        addon.Description('Names every path a package may hold, so a file living anywhere else is answered for.');
+
         addon.Field('id', {
             type: 'string',
             required: true,

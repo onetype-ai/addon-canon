@@ -4,6 +4,8 @@ onetype.AddonReady('canon', (canon) =>
 {
     canon.structure = onetype.Addon('canon.structure', (addon) =>
     {
+        addon.Description('Reads a file against the place it sits in and answers whether its registration lives where its name says.');
+
         addon.Field('id', {
             type: 'string',
             required: true,

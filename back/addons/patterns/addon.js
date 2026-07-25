@@ -4,6 +4,8 @@ onetype.AddonReady('canon', (canon) =>
 {
     canon.patterns = onetype.Addon('canon.patterns', (addon) =>
     {
+        addon.Description('Holds a file to the exact shape its kind takes, field by field, in the order the canon spells them.');
+
         addon.Field('id', {
             type: 'string',
             required: true,

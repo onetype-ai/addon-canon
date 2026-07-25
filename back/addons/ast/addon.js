@@ -4,6 +4,8 @@ onetype.AddonReady('canon', (canon) =>
 {
     canon.ast = onetype.Addon('canon.ast', (addon) =>
     {
+        addon.Description('Reads the parsed syntax of a file and answers what the code does that the canon does not allow.');
+
         addon.Field('id', {
             type: 'string',
             required: true,
