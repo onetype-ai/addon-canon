@@ -5,4 +5,4 @@ import canon from '#canon/back/addon.js';
 canon.tree.FnExpose('violations', function(root)
 {
     return this.Fn('assert.violations', root);
-});
+}, 'Walks a package and answers every file living where the tree allows nothing, and every part it misses.');

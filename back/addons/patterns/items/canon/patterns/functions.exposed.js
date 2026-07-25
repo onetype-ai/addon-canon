@@ -4,8 +4,8 @@ onetype.AddonReady('canon.patterns', (patterns) =>
 {
     patterns.Item({
         id: 'functions.exposed',
-        description: 'An exposed function file holds imports and one FnExpose registration carrying a function body, the file name is the exposed name.',
+        description: 'An exposed function file holds imports and one FnExpose carrying a body and the sentence saying what calling it does.',
         match: '/functions/exposed/[^/]+\\.js$',
-        pattern: "__addon__.FnExpose('__file__', __function__);"
+        pattern: "__addon__.FnExpose('__file__', __function__, __string__);"
     });
 });

@@ -74,7 +74,7 @@ Twenty-one tree rules read the parsed code: `arrows`, `comments`, `defines`, `de
 
 Nine path rules read the file against its place: `placement`, `register`, `describes`, `functions.name`, `functions.flat`, `items`, `naming`, `functions.verb`, `functions.home`.
 
-Thirteen patterns hold a file to its template, twenty-nine tree items name every path a package may hold, and two reach rules close the graph.
+Thirteen patterns hold a file to its template, twenty-nine tree items name every path a package may hold, and two reach rules close the graph. The exposed function pattern is the one that grew a demand of its own: an exposed function carries the sentence saying what calling it does, so a machine reading `FnExposed()` learns the surface without reading the source.
 
 ### Two rules that read together
 

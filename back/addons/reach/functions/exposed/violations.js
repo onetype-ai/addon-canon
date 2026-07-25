@@ -5,4 +5,4 @@ import canon from '#canon/back/addon.js';
 canon.reach.FnExpose('violations', function(root)
 {
     return this.Fn('assert.violations', root);
-});
+}, 'Follows the barrel of a package and answers the files nothing reaches and the imports that reach nothing.');

@@ -5,4 +5,4 @@ import canon from '#canon/back/addon.js';
 canon.FnExpose('violations', function(file)
 {
     return this.Fn('assert.violations', file);
-});
+}, 'Reads one file and answers every rule it breaks, each naming the line and the fix.');
