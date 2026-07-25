@@ -49,6 +49,8 @@ canon.tree.Fn('assert.violations', function(root)
 
     this.walk(root);
 
+    violations.push(...this.Fn('assert.folders', root));
+
     for(const item of Object.values(this.Items()))
     {
         if(item.Get('required') && !existsSync(join(root, item.Get('path'))))
