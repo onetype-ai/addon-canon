@@ -18,4 +18,11 @@ import '#canon/back/items/commands/rules.js';
 import '#canon/back/functions/assert.violations.js';
 import '#canon/back/functions/exposed/violations.js';
 
+import '#canon/back/items/tests/back/answers.js';
+import '#canon/back/items/tests/back/lists.js';
+import '#canon/back/items/tests/back/obeys.js';
+import '#canon/back/items/tests/back/reads.js';
+import '#canon/back/items/tests/back/registers.js';
+import '#canon/back/items/tests/back/walks.js';
+
 export default canon;

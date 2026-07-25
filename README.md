@@ -64,13 +64,13 @@ Canon is one addon with six sub addons, each answering a different question abou
 
 ## The rules
 
-Fourteen text rules read the raw lines: `empty`, `banner`, `allman`, `objects`, `spacing`, `json`, `endings`, `invisible`, `indent`, `branches`, `statements`, `width` (160 characters), `height` (160 lines), `breathing`.
+Fifteen text rules read the raw lines: `empty`, `banner`, `allman`, `objects`, `spacing`, `json`, `endings`, `invisible`, `dashes`, `indent`, `branches`, `statements`, `width` (160 characters), `height` (160 lines), `breathing`.
 
 Twenty-one tree rules read the parsed code: `arrows`, `comments`, `defines`, `declarations`, `globals`, `quotes`, `depth` (two levels), `exports`, `names` (three letters), `errors`, `catches`, `execution`, `modules`, `equality`, `ternary`, `params` (four), `methods` (fifteen own lines), `steps`, `fallbacks`, `aliases`, `arguments`.
 
 Eight path rules read the file against its place: `placement`, `register`, `functions.name`, `functions.flat`, `items`, `naming`, `functions.verb`, `functions.home`.
 
-Thirteen patterns hold a file to its template, twenty-seven tree items name every path a package may hold, and two reach rules close the graph.
+Thirteen patterns hold a file to its template, twenty-nine tree items name every path a package may hold, and two reach rules close the graph.
 
 ### Two rules that read together
 
@@ -93,7 +93,7 @@ canon.Fn('do.something', function(input)
 });
 ```
 
-`steps` says those steps stand at the top, above the work that calls them, so a reader meets the parts before the story. It also says the step goes on `this` wherever the caller hands over a receiver, and falls back to `const` only where there is none — an arrow has no `this` of its own.
+`steps` says those steps stand at the top, above the work that calls them, so a reader meets the parts before the story. It also says the step goes on `this` wherever the caller hands over a receiver, and falls back to `const` only where there is none: an arrow has no `this` of its own.
 
 `height` is the opposite case: a file over 160 lines does not shorten by naming more steps, it wants a part moved into its own file.
 
@@ -109,10 +109,27 @@ It returns every rule, pattern, placement and tree path grouped by the layer tha
 
 ## Canon runs on canon
 
-Canon holds itself to every rule it enforces, and it passes: 142 files, zero violations. A rule that its own author cannot live under is a rule that gets switched off, so the check is part of the design, not a claim.
+Canon holds itself to every rule it enforces, and it passes: 151 files, zero violations. A rule that its own author cannot live under is a rule that gets switched off, so the check is part of the design, not a claim.
+
+That claim is a test, not a sentence. `back/items/tests/back/obeys.js` reads every file canon carries and asks canon about it, so the day a rule outgrows its own codebase the run says so.
+
+## What the tests hold it to
+
+With `@onetype/addon-tests` present, six tests register under `back/items/tests/back/`:
+
+| Test | Holds |
+| --- | --- |
+| `answers` | Reading one file answers a list, each entry naming the rule, the file, the line and the fix. |
+| `reads` | The linter catches what only the raw lines show, the tree layer what only the parsed syntax shows. |
+| `walks` | A package walk reports stray files, empty folders, missing parts and files nothing reaches. |
+| `lists` | Every rule in every layer carries an id, a sentence and a way to answer, each registered once. |
+| `obeys` | Every file canon carries passes canon, and so do both its manifests. |
+| `registers` | Registering a package enters every sub addon beneath it, each pointing at its own folder. |
+
+Run them with `tests.back.run('canon')`.
 
 ## Guarantees
 
 - A rule is an item, so the set is inspectable, extendable and describable at runtime.
-- A violation names the rule, the file, the line and what to do about it — the message is the fix, not a code.
+- A violation names the rule, the file, the line and what to do about it: the message is the fix, not a code.
 - Checking never executes the file it reads: canon parses, it does not run.
