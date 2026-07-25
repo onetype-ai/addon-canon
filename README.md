@@ -60,7 +60,7 @@ Canon is one addon with six sub addons, each answering a different question abou
 | `canon.tree` | the folder | May a file live on this path at all? |
 | `canon.reach` | the import graph | Does anything reach this file? |
 
-`canon.placements` is the table the structure layer reads: it maps a registration method to the folder that method belongs in.
+`canon.placements` is the table the structure layer reads: it maps a registration method to the folder that method belongs in, or to the few folders when a method is right in more than one place. `ItemOn` is the case for that: a hook into your own addon lives in `item/catch/`, a hook into someone else's lives in `listeners/items/<addon>/`, where the folder names the addon and the file names the moment. The check reads the whole file, not only its top level, so a registration hidden inside a callback is found the same as one standing alone.
 
 ## The rules
 

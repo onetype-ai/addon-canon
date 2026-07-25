@@ -5,7 +5,7 @@ onetype.AddonReady('canon.placements', (placements) =>
     placements.Item({
         id: 'item.on',
         method: 'ItemOn',
-        home: '/item/catch/',
-        description: 'An item catch hooks a moment of the item life, it lives in the item catch folder.'
+        home: ['/item/catch/', '/listeners/items/'],
+        description: 'An item catch hooks a moment of the item life, its own addon from item catch and another from listeners items, the folder naming it.'
     });
 });

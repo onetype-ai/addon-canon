@@ -24,6 +24,8 @@ import '#canon/back/addons/tree/items/canon/tree/items.front.js';
 import '#canon/back/addons/tree/items/canon/tree/license.js';
 import '#canon/back/addons/tree/items/canon/tree/listeners.emitters.back.js';
 import '#canon/back/addons/tree/items/canon/tree/listeners.emitters.front.js';
+import '#canon/back/addons/tree/items/canon/tree/listeners.items.back.js';
+import '#canon/back/addons/tree/items/canon/tree/listeners.items.front.js';
 import '#canon/back/addons/tree/items/canon/tree/listeners.middlewares.back.js';
 import '#canon/back/addons/tree/items/canon/tree/listeners.middlewares.front.js';
 import '#canon/back/addons/tree/items/canon/tree/load.back.js';

@@ -23,9 +23,13 @@ onetype.AddonReady('canon', (canon) =>
         });
 
         addon.Field('home', {
-            type: 'string',
+            type: 'string|array',
             required: true,
-            description: 'Folder segment the registration lives in, like /commands/.'
+            each: {
+                type: 'string',
+                description: 'One folder segment the registration may live in.'
+            },
+            description: 'Folder segment the registration lives in, like /commands/, or a list when more than one place is right.'
         });
 
         addon.Field('description', {

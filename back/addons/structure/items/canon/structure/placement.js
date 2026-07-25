@@ -4,21 +4,19 @@ onetype.AddonReady('canon.structure', (structure) =>
 {
     structure.Item({
         id: 'placement',
-        description: 'Every registration lives in the folder its placement item names.',
-        check: (file, tree, walk, report) =>
+        description: 'Every registration lives in one of the folders its placement item names, wherever in the file it sits.',
+        check: function(file, tree, walk, report)
         {
-            const calls = tree.body
-                .filter((node) => node.type === 'ExpressionStatement')
-                .map((node) => node.expression)
-                .filter((node) =>
-                {
-                    return node.type === 'CallExpression'
-                        && node.callee.type === 'MemberExpression';
-                });
-
-            for(const node of calls)
+            this.registers = (node) =>
             {
-                const entry = Object.values(onetype.AddonGet('canon.placements').Items()).find((candidate) =>
+                return node.type === 'CallExpression'
+                    && node.callee.type === 'MemberExpression'
+                    && !!node.callee.property;
+            };
+
+            this.placement = (node) =>
+            {
+                return Object.values(onetype.AddonGet('canon.placements').Items()).find((candidate) =>
                 {
                     if(candidate.Get('method') !== node.callee.property.name)
                     {
@@ -29,12 +27,37 @@ onetype.AddonReady('canon.structure', (structure) =>
 
                     return receiver ? receiver === node.callee.object.name : true;
                 });
+            };
 
-                if(entry && !file.includes(entry.Get('home')))
+            this.homes = (entry) =>
+            {
+                return [].concat(entry.Get('home'));
+            };
+
+            this.astray = (entry) =>
+            {
+                return !this.homes(entry).some((home) => file.includes(home));
+            };
+
+            this.told = (entry) =>
+            {
+                const homes = this.homes(entry);
+                const named = homes.length > 1 ? homes.slice(0, -1).join(', ') + ' or ' + homes[homes.length - 1] : homes[0];
+
+                return entry.Get('method') + ' lives in ' + named + ', this file sits elsewhere.';
+            };
+
+            walk((node) =>
+            {
+                if(!this.registers(node))
                 {
-                    report(node.loc.start.line, entry.Get('method') + ' lives in ' + entry.Get('home') + ', this file sits elsewhere.');
+                    return;
                 }
-            }
+
+                const entry = this.placement(node);
+
+                entry && this.astray(entry) && report(node.loc.start.line, this.told(entry));
+            });
         }
     });
 });
