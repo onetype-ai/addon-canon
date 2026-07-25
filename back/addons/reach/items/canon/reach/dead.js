@@ -16,7 +16,7 @@ onetype.AddonReady('canon.reach', (reach) =>
 
             const reached = reach.Fn('get.reached', root, alias, 'back');
 
-            for(const file of reach.Fn('find.files', base))
+            for(const file of onetype.assets.read(base))
             {
                 if(!reached.has(file))
                 {

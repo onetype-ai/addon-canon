@@ -4,7 +4,6 @@ import '#canon/back/addons/reach/addon.js';
 import '#canon/back/addons/reach/functions/get.imports.js';
 import '#canon/back/addons/reach/functions/get.reached.js';
 import '#canon/back/addons/reach/functions/get.alias.js';
-import '#canon/back/addons/reach/functions/find.files.js';
 import '#canon/back/addons/reach/functions/get.base.js';
 import '#canon/back/addons/reach/functions/assert.violations.js';
 import '#canon/back/addons/reach/functions/exposed/violations.js';
